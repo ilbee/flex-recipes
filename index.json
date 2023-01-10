@@ -10,5 +10,6 @@
         "repository": "github.com/ilbee/flex-recipes",
         "origin_template": "{package}:{version}@github.com/ilbee/flex-recipes:main",
         "recipe_template": "https://api.github.com/repos/ilbee/flex-recipes/{package_dotted}.{version}.json"
+        "recipe_template": "https://raw.githubusercontent.com/ilbee/flex-recipes/main/{package_dotted}.{version}.json
     }
 }
