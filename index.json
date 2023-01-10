@@ -1,6 +1,6 @@
 {
     "recipes": {
-        "acme/private-bundle": [
+        "fnacdarty/user-api-bundle": [
             "1.0"
         ]
     },
