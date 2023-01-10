@@ -1,0 +1,14 @@
+{
+    "recipes": {
+        "acme/private-bundle": [
+            "1.0"
+        ]
+    },
+    "branch": "master",
+    "is_contrib": true,
+    "_links": {
+        "repository": "github.com/ilbee/flex-recipes",
+        "origin_template": "{package}:{version}@github.com/ilbee/flex-recipes:main",
+        "recipe_template": "https://api.github.com/repos/ilbee/flex-recipes/{package_dotted}.{version}.json"
+    }
+}
