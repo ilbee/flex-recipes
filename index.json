@@ -4,11 +4,11 @@
             "1.0"
         ]
     },
-    "branch": "master",
+    "branch": "main",
     "is_contrib": true,
     "_links": {
         "repository": "github.com/ilbee/flex-recipes",
         "origin_template": "{package}:{version}@github.com/ilbee/flex-recipes:main",
-        "recipe_template": "https://raw.githubusercontent.com/ilbee/flex-recipes/main/{package_dotted}/{version}/manifest.json"
+		"recipe_template": "https://api.github.com/repos/ilbee/flex-recipes/contents/{package_dotted}.{version}.json
     }
 }
