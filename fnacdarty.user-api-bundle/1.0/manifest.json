@@ -4,7 +4,7 @@
             "manifest": {
                 "bundles": {
                     "FnacDarty\\UserApi\\UserApiBundle": [
-                        "all"
+                        "dev"
                     ]
                 },
                 "copy-from-recipe": {
@@ -15,14 +15,14 @@
                 "config/packages/user_api_bundle.yaml": {
                     "contents": [
                         "user_api_bundle:",
-                        "    api:",
-                        "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
+                        "  api:",
+                        "    endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
                         ""
                     ],
                     "executable": false
                 }
             },
-            "ref": "6f410daaff40864f83e9d4b425b29a3e7cd2c930"
+            "ref": "7405f3af1312d1f9121afed4dddef636c6c7ff00"
         }
     }
 }
