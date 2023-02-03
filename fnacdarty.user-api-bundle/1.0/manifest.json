@@ -1,8 +1,28 @@
 {
-    "bundles": {
-        "FnacDarty\\UserApi\\UserApiBundle": ["all"]
-    },
-    "copy-from-recipe": {
-        "config/": "%CONFIG_DIR%/"
+    "manifests": {
+        "fnacdarty/user-api-bundle": {
+            "manifest": {
+                "bundles": {
+                    "FnacDarty\\UserApi\\UserApiBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                }
+            },
+            "files": {
+                "config/packages/user_api_bundle.yaml": {
+                    "contents": [
+                        "user_api_bundle:",
+                        "    api:",
+                        "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "6f410daaff40864f83e9d4b425b29a3e7cd2c930"
+        }
     }
 }
