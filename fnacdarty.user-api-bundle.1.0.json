@@ -9,6 +9,12 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+					"#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/user-api-bundle",
+					"USER_API_SERVICE_ENDPOINT": "https://user.api/",
+					"USER_API_SERVICE_USER_AGENT": "FnacDarty UserAPI Bundle"
                 }
             },
             "files": {
@@ -17,6 +23,10 @@
                         "user_api_bundle:",
                         "    api:",
                         "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
+						"        user_agent: '%env('USER_API_SERVICE_USER_AGENT)%'",
+						"        role_requested:"
+						"            - ROLE_USER"
+						"            - ROLE_ADMIN"
                         ""
                     ],
                     "executable": false
