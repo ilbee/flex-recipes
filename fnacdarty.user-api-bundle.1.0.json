@@ -24,9 +24,9 @@
                         "    api:",
                         "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
                         "        user_agent: '%env('USER_API_SERVICE_USER_AGENT)%'",
-                        "    role_requested:"
-                        "        - ROLE_USER"
-                        "        - ROLE_ADMIN"
+                        "    role_requested:",
+                        "        - ROLE_USER",
+                        "        - ROLE_ADMIN",
                         ""
                     ],
                     "executable": false
