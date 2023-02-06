@@ -24,9 +24,9 @@
                         "    access_control:",
                         "        - { path: ^/auth/login, roles: PUBLIC_ACCESS }",
                         ""
-                    ]
+                    ],
                     "executable": false
-                }
+                },
                 "config/packages/user_api_bundle.yaml": {
                     "contents": [
                         "user_api_bundle:",
