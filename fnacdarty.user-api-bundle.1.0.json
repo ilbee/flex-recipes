@@ -33,7 +33,7 @@
                         "    api:",
                         "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
                         "        user_agent: '%env(USER_API_SERVICE_USER_AGENT)%'",
-                        "    role_requested:",
+                        "    requested_roles:",
                         "        - ROLE_USER",
                         "        - ROLE_ADMIN",
                         ""
