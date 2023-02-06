@@ -22,7 +22,7 @@
                     "contents": [
                         "security:",
                         "    access_control:",
-                        "        - { path: ^/auth/login, roles: PUBLIC_ACCESS }
+                        "        - { path: ^/auth/login, roles: PUBLIC_ACCESS }"
                         ""
                     ]
                     "executable": false
