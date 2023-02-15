@@ -1,3 +1,0 @@
-  * Hello world !
-
-  * <fg=blue>Read</> the documentation at <comment>https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/user-api-bundle</>

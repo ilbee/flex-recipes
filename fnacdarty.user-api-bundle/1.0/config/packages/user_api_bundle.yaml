@@ -1,3 +1,0 @@
-user_api_bundle:
-  api:
-    endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'
