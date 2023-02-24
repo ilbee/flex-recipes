@@ -1,0 +1,55 @@
+{
+    "manifests": {
+        "fnacdarty/user-api-bundle": {
+            "manifest": {
+                "bundles": {
+                    "FnacDarty\\UserApi\\UserApiBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/user-api-bundle",
+                    "USER_API_SERVICE_ENDPOINT": "https://user.api/",
+                    "USER_API_SERVICE_USER_AGENT": "FnacDarty UserAPI Bundle"
+                }
+            },
+            "files": {
+                "config/packages/security.yaml": {
+                    "contents": [
+                        "security:",
+                        "    access_control:",
+                        "        - { path: ^/auth/login, roles: PUBLIC_ACCESS }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/user_api_bundle.yaml": {
+                    "contents": [
+                        "user_api_bundle:",
+                        "    api:",
+                        "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
+                        "        user_agent: '%env(USER_API_SERVICE_USER_AGENT)%'",
+                        "    requested_roles:",
+                        "        - ROLE_USER",
+                        "        - ROLE_ADMIN",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/user_api_bundle.yaml": {
+                    "contents": [
+                        "_user_api_bundle:",
+                        "    resource: '@UserApiBundle/Resources/config/routes.yaml'",
+                        "    prefix: /auth"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "7405f3af1312d1f9121afed4dddef636c6c7ff00"
+        }
+    }
+}
