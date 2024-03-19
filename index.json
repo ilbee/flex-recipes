@@ -3,6 +3,9 @@
         "fnacdarty/user-api-bundle": [
             "1.0",
 			"1.7"
+        ],
+        "fnacdarty/mwcs-mailer": [
+            "1.0"
         ]
     },
     "branch": "main",

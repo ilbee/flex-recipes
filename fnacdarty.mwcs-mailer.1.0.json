@@ -1,0 +1,15 @@
+{
+    "manifests": {
+        "fnacdarty/mwcs-mailer": {
+            "manifest": {
+                "env": {
+                    "#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/mwcs-mailer",
+                    "#3": "MAILER_DSN=mwcs+api://mwcs.host.name/",
+					"#4": "MAILER_DSN=mwcs://mwcs.host.name/"
+                }
+            },
+            "ref": "89b71d79dd266512daa40a6a248364636d78d6b3"
+        }
+    }
+}
