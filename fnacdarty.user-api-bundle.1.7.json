@@ -1,0 +1,59 @@
+{
+    "manifests": {
+        "fnacdarty/user-api-bundle": {
+            "manifest": {
+                "bundles": {
+                    "FnacDarty\\UserApi\\UserApiBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/user-api-bundle",
+                    "USER_API_SERVICE_ENDPOINT": "https://user.api/",
+                    "USER_API_SERVICE_USER_AGENT": "FnacDarty UserAPI Bundle",
+					"USER_API_SERVICE_SSO_REDIRECT_URI": "https://your.hostname/sso/endpoint",
+                    "#3": "USER_API_SERVICE_AUTH_CONSUMER_KEY='azerty'"
+                }
+            },
+            "files": {
+                "config/packages/security.yaml": {
+                    "contents": [
+                        "security:",
+                        "    access_control:",
+                        "        - { path: ^/auth/login, roles: PUBLIC_ACCESS }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/packages/user_api_bundle.yaml": {
+                    "contents": [
+                        "user_api_bundle:",
+                        "    api:",
+                        "        endpoint: '%env(USER_API_SERVICE_ENDPOINT)%'",
+                        "        user_agent: '%env(USER_API_SERVICE_USER_AGENT)%'",
+                        "        auth_consumer_key: '%env(USER_API_SERVICE_AUTH_CONSUMER_KEY)%'",
+                        "    requested_roles:",
+                        "        - ROLE_USER",
+                        "        - ROLE_ADMIN",
+						"    sso_redirect_uri: '%env(USER_API_SERVICE_SSO_REDIRECT_URI)%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/user_api_bundle.yaml": {
+                    "contents": [
+                        "_user_api_bundle:",
+                        "    resource: '@UserApiBundle/Resources/config/routes.yaml'",
+                        "    prefix: /auth"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "54dfa8303b5829b564a5f9d4dd3593a64aa26424"
+        }
+    }
+}
