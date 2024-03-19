@@ -2,6 +2,11 @@
     "manifests": {
         "fnacdarty/mwcs-mailer": {
             "manifest": {
+                "bundles": {
+                    "FnacDarty\\MwcsMailer\\MwcsMailerBundle": [
+                        "all"
+                    ]
+                },
                 "env": {
                     "#1": "Configuration information is available at ",
                     "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/mwcs-mailer",
