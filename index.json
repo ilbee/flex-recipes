@@ -1,7 +1,8 @@
 {
     "recipes": {
         "fnacdarty/user-api-bundle": [
-            "1.0"
+            "1.0",
+			"1.7"
         ]
     },
     "branch": "main",
