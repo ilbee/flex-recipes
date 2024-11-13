@@ -2,9 +2,13 @@
     "recipes": {
         "fnacdarty/user-api-bundle": [
             "1.0",
+			"1.4",
 			"1.7"
         ],
         "fnacdarty/mwcs-mailer": [
+            "1.0"
+        ],
+        "fnacdarty/health-checker": [
             "1.0"
         ]
     },
