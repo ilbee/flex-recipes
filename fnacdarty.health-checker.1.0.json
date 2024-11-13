@@ -1,0 +1,29 @@
+{
+    "manifests": {
+        "fnacdarty/health-checker": {
+            "manifest": {
+                "bundles": {
+                    "FnacDarty\\HealthChecker\\HealthCheckerBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+            },
+            "files": {
+                "config/packages/health_checker.yaml": {
+                    "contents": [
+                        "health_checker:",
+                        "    response:",
+                        "        code: 200",
+                        "        content: pong",
+                        ""
+                    ],
+                    "executable": false
+                },
+            },
+            "ref": "54dfa8303b5829b564a5f9d4dd3593a64aa26424"
+        }
+    }
+}
