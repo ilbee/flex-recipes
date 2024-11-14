@@ -18,6 +18,7 @@
                         "    response:",
                         "        code: 200",
                         "        content: pong",
+                        "        endpoint: '/test'",
                         ""
                     ],
                     "executable": false
