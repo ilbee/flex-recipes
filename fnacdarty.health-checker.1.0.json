@@ -9,6 +9,11 @@
                 },
                 "copy-from-recipe": {
                     "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/health-checker",
+                    "HEALTH_CHECKER_ENDPOINT": "/_service/ok.php"
                 }
             },
             "files": {
@@ -18,7 +23,7 @@
                         "    response:",
                         "        code: 200",
                         "        content: pong",
-                        "        endpoint: '/test'",
+                        "        endpoint: '%env(HEALTH_CHECKER_ENDPOINT)%",
                         ""
                     ],
                     "executable": false
