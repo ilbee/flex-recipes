@@ -23,7 +23,7 @@
                         "    response:",
                         "        code: 200",
                         "        content: pong",
-                        "        endpoint: '%env(HEALTH_CHECKER_ENDPOINT)%",
+                        "        endpoint: '%env(HEALTH_CHECKER_ENDPOINT)%'",
                         ""
                     ],
                     "executable": false
