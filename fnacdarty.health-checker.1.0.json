@@ -21,6 +21,14 @@
                         ""
                     ],
                     "executable": false
+                },
+                "config/routes/health_checker.yaml": {
+                    "contents": [
+                        "_health_checker:",
+                        "    resource: '@HealthCheckerBundle/Resources/config/routes.yaml'",
+                        ""
+                    ],
+                    "executable": false
                 }
             },
             "ref": "54dfa8303b5829b564a5f9d4dd3593a64aa26424"
