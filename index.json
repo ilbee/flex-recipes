@@ -10,7 +10,10 @@
         ],
         "fnacdarty/health-checker": [
             "1.0"
-        ]
+        ],
+		"fnacdarty/kafka-service": [
+			"1.0"
+		]
     },
     "branch": "main",
     "is_contrib": true,

@@ -1,0 +1,46 @@
+{
+    "manifests": {
+        "fnacdarty/kafka-service": {
+            "manifest": {
+                "bundles": {
+                    "FnacDarty\\KafkaService\\KafkaServiceBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/kafka-service",
+					"KAFKA_SERVICE_BROKER": "your.kafka.broker:9092",
+					"KAFKA_SERVICE_TOPIC": "your_topice_name",
+					"KAFKA_SERVICE_USERNAME": "your_kafka_username",
+					"KAFKA_SERVICE_PASSWORD": "your_kafka_password"
+                }
+            },
+            "files": {
+                "config/packages/kafka_service.yaml": {
+                    "contents": [
+                        "kafka-service:",
+                        "    broker: '%env(KAFKA_SERVICE_BROKER)%'",
+                        "    topic: '%env(KAFKA_SERVICE_TOPIC)%'",
+						"    produce:"
+						"#        flush_timeout: 5000"
+                        "    credentials:"
+                        "        username: '%env(KAFKA_SERVICE_USERNAME)%'",
+                        "        password: '%env(KAFKA_SERVICE_PASSWORD)%'",
+                        "        producer:"
+						"#            username: null"
+						"#            password: null"
+						"        consumer:"
+						"#            username: null"
+						"#            password: null"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "az32a8303b5829b564a5f9d4dd3593a64aa26424"
+        }
+    }
+}
