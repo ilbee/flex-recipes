@@ -22,7 +22,7 @@
             "files": {
                 "config/packages/kafka_service.yaml": {
                     "contents": [
-                        "kafka-service:",
+                        "kafka_service:",
                         "    broker: '%env(KAFKA_SERVICE_BROKER)%'",
                         "    topic: '%env(KAFKA_SERVICE_TOPIC)%'",
 						"    produce:",
