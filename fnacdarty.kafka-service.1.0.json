@@ -30,11 +30,11 @@
                         "    credentials:"
                         "        username: '%env(KAFKA_SERVICE_USERNAME)%'",
                         "        password: '%env(KAFKA_SERVICE_PASSWORD)%'",
-                        "        producer:"
-						"#            username: null"
-						"#            password: null"
-						"        consumer:"
-						"#            username: null"
+                        "        producer:",
+						"#            username: null",
+						"#            password: null",
+						"        consumer:",
+						"#            username: null",
 						"#            password: null"
                     ],
                     "executable": false
