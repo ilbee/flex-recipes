@@ -25,9 +25,9 @@
                         "kafka-service:",
                         "    broker: '%env(KAFKA_SERVICE_BROKER)%'",
                         "    topic: '%env(KAFKA_SERVICE_TOPIC)%'",
-						"    produce:"
-						"#        flush_timeout: 5000"
-                        "    credentials:"
+						"    produce:",
+						"#        flush_timeout: 5000",
+                        "    credentials:",
                         "        username: '%env(KAFKA_SERVICE_USERNAME)%'",
                         "        password: '%env(KAFKA_SERVICE_PASSWORD)%'",
                         "        producer:",
