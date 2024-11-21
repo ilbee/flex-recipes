@@ -13,11 +13,12 @@
                 "env": {
                     "#1": "Configuration information is available at ",
                     "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/kafka-service",
-                    "KAFKA_SERVICE_BROKER": "your.kafka.broker:9092",
-                    "KAFKA_SERVICE_TOPIC": "your_topice_name",
-                    "KAFKA_SERVICE_USERNAME": "your_kafka_username",
-                    "KAFKA_SERVICE_PASSWORD": "your_kafka_password",
-                    "KAFKA_SERVICE_CLIENT_ID": "my_application_client_id"
+                    "KAFKA_SERVICE_BROKER": "your.kafka.broker.hostname:9092",
+                    "KAFKA_SERVICE_TOPIC": "your.topic.name",
+                    "KAFKA_SERVICE_USERNAME": "yourKafkaUsername",
+                    "KAFKA_SERVICE_PASSWORD": "YourKafkaPassword",
+                    "KAFKA_SERVICE_CLIENT_ID": "my.application.client.id",
+					"KAFKA_SERVICE_GROUP_ID": "my.group.id"
                 }
             },
             "files": {
@@ -40,12 +41,21 @@
                         "            #username: null",
                         "            #password: null",
                         "    config:",
+                        "        auto:",
+						"            offset:",
+						"                reset: 'earliest'",
                         "        client:",
                         "            id: '%env(KAFKA_SERVICE_CLIENT_ID)%'",
-						"        debug: 'all'",
+						"        #debug: 'all'",
 						"        enable:",
+						"            partition:",
+						"                eof: true",
+						"            auto:",
+						"                commit: 'false'",
 						"            idempotence: true",
-						"        log_level: '7'",
+						"        group:",
+						"            id: '%env(KAFKA_SERVICE_GROUP_ID)%'",
+						"        #log_level: '7'",
 						"        message:",
 						"            timeout:",
 						"                ms: 5000",
@@ -60,7 +70,7 @@
                     "executable": false
                 }
             },
-            "ref": "9601c227cbdc128716d131e540ab55c73fd7a946"
+            "ref": "8af7f190c806770043fbdfbaf5b7b70fc76a55ae"
         }
     }
 }
