@@ -39,28 +39,28 @@
                         "        #consumer:",
                         "            #username: null",
                         "            #password: null",
-                        "        config:",
-                        "            client:",
-                        "                 id: '%env(KAFKA_SERVICE_CLIENT_ID)%'",
-						"            debug: 'all'",
-						"            enable:",
-						"                idempotence: true",
-						"            log_level: '7'",
-						"            message:",
-						"                timeout:",
-						"                    ms: 5000",
-						"            retry:",
-						"                backoff:",
-						"                    ms: 500",
-						"            security:",
-						"                protocol: 'SASL_SSL'",
-						"            sasl:",
-						"                mechanisms: 'PLAIN'"
+                        "    config:",
+                        "        client:",
+                        "            id: '%env(KAFKA_SERVICE_CLIENT_ID)%'",
+						"        debug: 'all'",
+						"        enable:",
+						"            idempotence: true",
+						"        log_level: '7'",
+						"        message:",
+						"            timeout:",
+						"                ms: 5000",
+						"        retry:",
+						"            backoff:",
+						"                ms: 500",
+						"        security:",
+						"            protocol: 'SASL_SSL'",
+						"        sasl:",
+						"            mechanisms: 'PLAIN'"
                     ],
                     "executable": false
                 }
             },
-            "ref": "e05a3c185421ed3ee652e5d5f74f691ed44f6013"
+            "ref": "9601c227cbdc128716d131e540ab55c73fd7a946"
         }
     }
 }
