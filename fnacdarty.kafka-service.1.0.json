@@ -46,7 +46,7 @@
 						"            enable:",
 						"                idempotence: true",
 						"            log_level: '7'",
-						"            message:'",
+						"            message:",
 						"                timeout:",
 						"                    ms: 5000",
 						"            retry:",
