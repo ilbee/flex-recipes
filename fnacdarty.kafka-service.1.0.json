@@ -16,7 +16,8 @@
 					"KAFKA_SERVICE_BROKER": "your.kafka.broker:9092",
 					"KAFKA_SERVICE_TOPIC": "your_topice_name",
 					"KAFKA_SERVICE_USERNAME": "your_kafka_username",
-					"KAFKA_SERVICE_PASSWORD": "your_kafka_password"
+					"KAFKA_SERVICE_PASSWORD": "your_kafka_password",
+					"KAFKA_SERVICE_CLIENT_ID": "my_application_client_id"
                 }
             },
             "files": {
@@ -35,12 +36,24 @@
 						"#            password: null",
 						"        consumer:",
 						"#            username: null",
-						"#            password: null"
+						"#            password: null",
+						"        config:",
+						"            client:",
+						"                 id: '%env(KAFKA_SERVICE_CLIENT_ID)%'",
+						"#            compression:",
+						"#                codec: 'snappy'",
+						"#            message:",
+						"#                timeout:",
+						"#                    ms: 5000",
+						"            enable:",
+						"                idempotence: true",
+						"#            security:",
+						"#                protocol: ''"
                     ],
                     "executable": false
                 }
             },
-            "ref": "az32a8303b5829b564a5f9d4dd3593a64aa26424"
+            "ref": "9be946b91f1566daba7f849e49c51c0aa11c2e9a"
         }
     }
 }
