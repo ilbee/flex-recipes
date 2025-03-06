@@ -1,0 +1,89 @@
+{
+    "manifests": {
+        "fnacdarty/kafka-service": {
+            "manifest": {
+                "bundles": {
+                    "FnacDarty\\KafkaService\\KafkaServiceBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "#1": "Configuration information is available at ",
+                    "#2": "https://gitlab.com/fnacdarty/fdps/dev/common/marchandisesphp/bundles/kafka-service",
+                    "KAFKA_SERVICE_BROKER": "your.kafka.broker.hostname:9092",
+                    "KAFKA_SERVICE_TOPIC": "your.topic.name",
+                    "KAFKA_SERVICE_USERNAME": "yourKafkaUsername",
+                    "KAFKA_SERVICE_PASSWORD": "YourKafkaPassword",
+                    "KAFKA_SERVICE_CLIENT_ID": "my.application.client.id",
+					"KAFKA_SERVICE_GROUP_ID": "my.group.id",
+					"#3": "KAFKA_MY_TOPIC_NAME=your.kafka.custom.topic.name"
+                }
+            },
+            "files": {
+				"config/packages/messenger.yaml": {
+					"contents": [
+						"framework:",
+						"    messenger:",
+						"        transports:",
+						"            # kafka.my_kafka_topic_handler: '%env(KAFKA_MY_TOPIC_NAME)%'"
+					],
+					"executable": false
+				},
+                "config/packages/kafka_service.yaml": {
+                    "contents": [
+                        "kafka_service:",
+                        "    broker: '%env(KAFKA_SERVICE_BROKER)%'",
+                        "    topic: '%env(KAFKA_SERVICE_TOPIC)%'",
+						"    transport:",
+						"        # kafka.my_kafka_topic_handler: 'App\Message\MyKafkaMessage'",
+						"        default: 'FnacDarty\KafkaService\Message\KafkaIncomingMessage'",
+                        "    #produce:",
+                        "        #flush_timeout: 5000",
+                        "    credentials:",
+                        "        username: '%env(KAFKA_SERVICE_USERNAME)%'",
+                        "        password: '%env(KAFKA_SERVICE_PASSWORD)%'",
+						"        # You may need to use a separate credential pair between the consumer and producer.",
+						"        # If they are set they take precedence over the global credentials.",
+                        "        #producer:",
+                        "            #username: null",
+                        "            #password: null",
+                        "        #consumer:",
+                        "            #username: null",
+                        "            #password: null",
+                        "    config:",
+                        "        auto:",
+						"            offset:",
+						"                reset: 'earliest'",
+                        "        client:",
+                        "            id: '%env(KAFKA_SERVICE_CLIENT_ID)%'",
+						"        #debug: 'all'",
+						"        enable:",
+						"            partition:",
+						"                eof: true",
+						"            auto:",
+						"                commit: 'false'",
+						"            idempotence: true",
+						"        group:",
+						"            id: '%env(KAFKA_SERVICE_GROUP_ID)%'",
+						"        #log_level: '7'",
+						"        message:",
+						"            timeout:",
+						"                ms: 5000",
+						"        retry:",
+						"            backoff:",
+						"                ms: 500",
+						"        security:",
+						"            protocol: 'SASL_SSL'",
+						"        sasl:",
+						"            mechanisms: 'PLAIN'"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "8af7f190c806770043fbdfbaf5b7b70fc76a55ae"
+        }
+    }
+}
